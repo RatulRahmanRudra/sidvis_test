@@ -203,60 +203,60 @@ plot_pane4 = pn.pane.Matplotlib(plt.gcf(), dpi=144)
 # In[17]:
 
 
-import panel as pn
-import matplotlib.pyplot as plt
+# import panel as pn
+# import matplotlib.pyplot as plt
 
-pn.extension('matplotlib')
+# pn.extension('matplotlib')
 
-# create a list of accuracy values
-accuracy = [98.85, 99.00, 99.42, 99.71, 99.85, 99.85, 99.85, 99.85, 99.85, 99.85]
-accuracy1 = [50.14, 93.71, 93.85, 94.71, 95, 94.85, 94.85, 95.00, 95.00, 95.00]
-accuracy2 = [60.14, 67.71, 83.85, 91.71, 95, 94.85, 94.85, 95.00, 96.00, 99.00]
-accuracy3 = [75.14, 93.71, 94.85, 94.71, 95, 96.85, 97.85, 97.00, 98.00, 99.00]
-accuracy4 = [60.14, 70.71, 77.85, 85.71, 91, 94.85, 94.85, 95.00, 95.40, 95.00]
-accuracy5 = [55.14, 55.71, 60.85, 60.85, 60.85, 60.85, 62, 65.00, 65.00, 65.00]
-accuracy6 = [50.14, 73.71, 73.85, 74.71, 75, 74.85, 74.85, 75.00, 75.00, 75.00]
-accuracy7 = [70.14, 73.71, 73.85, 84.71, 85, 84.85, 84.85, 85.00, 85.00, 85.00]
-# create a list of epoch values
-epochs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # create a list of accuracy values
+# accuracy = [98.85, 99.00, 99.42, 99.71, 99.85, 99.85, 99.85, 99.85, 99.85, 99.85]
+# accuracy1 = [50.14, 93.71, 93.85, 94.71, 95, 94.85, 94.85, 95.00, 95.00, 95.00]
+# accuracy2 = [60.14, 67.71, 83.85, 91.71, 95, 94.85, 94.85, 95.00, 96.00, 99.00]
+# accuracy3 = [75.14, 93.71, 94.85, 94.71, 95, 96.85, 97.85, 97.00, 98.00, 99.00]
+# accuracy4 = [60.14, 70.71, 77.85, 85.71, 91, 94.85, 94.85, 95.00, 95.40, 95.00]
+# accuracy5 = [55.14, 55.71, 60.85, 60.85, 60.85, 60.85, 62, 65.00, 65.00, 65.00]
+# accuracy6 = [50.14, 73.71, 73.85, 74.71, 75, 74.85, 74.85, 75.00, 75.00, 75.00]
+# accuracy7 = [70.14, 73.71, 73.85, 84.71, 85, 84.85, 84.85, 85.00, 85.00, 85.00]
+# # create a list of epoch values
+# epochs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# Define a function to plot the data
-def plot_accuracy(epochs, accuracy, accuracy1):
-    fig, ax = plt.subplots()
-    ax.plot(epochs, accuracy, label='BERT')
-    ax.plot(epochs, accuracy1, label='LSTM')
-    ax.plot(epochs, accuracy2, label='BiLSTM')
-    ax.plot(epochs, accuracy3, label='RF')
-    ax.plot(epochs, accuracy4, label='SVM')
-    ax.plot(epochs, accuracy5, label='GaussianNB')
-    ax.plot(epochs, accuracy6, label='LR')
-    ax.plot(epochs, accuracy7, label='KNeighbors')
-    ax.set_xlabel('Epochs')
-    ax.set_ylabel('Accuracy')
-    ax.set_title('Accuracy over Epochs')
-    plt.figure(figsize=(20, 18))
-    ax.legend(loc='upper left', bbox_to_anchor=(1.0, 1))
-    return fig
+# # Define a function to plot the data
+# def plot_accuracy(epochs, accuracy, accuracy1):
+#     fig, ax = plt.subplots()
+#     ax.plot(epochs, accuracy, label='BERT')
+#     ax.plot(epochs, accuracy1, label='LSTM')
+#     ax.plot(epochs, accuracy2, label='BiLSTM')
+#     ax.plot(epochs, accuracy3, label='RF')
+#     ax.plot(epochs, accuracy4, label='SVM')
+#     ax.plot(epochs, accuracy5, label='GaussianNB')
+#     ax.plot(epochs, accuracy6, label='LR')
+#     ax.plot(epochs, accuracy7, label='KNeighbors')
+#     ax.set_xlabel('Epochs')
+#     ax.set_ylabel('Accuracy')
+#     ax.set_title('Accuracy over Epochs')
+#     plt.figure(figsize=(20, 18))
+#     ax.legend(loc='upper left', bbox_to_anchor=(1.0, 1))
+#     return fig
 
 
-# create a slider widget for selecting the epoch
-epoch_slider = pn.widgets.IntSlider(start=1, end=10, value=1, name='epochs')
-# create a Matplotlib pane
-plot_pane1 = pn.pane.Matplotlib(plot_accuracy(epochs, accuracy, accuracy1))
+# # create a slider widget for selecting the epoch
+# epoch_slider = pn.widgets.IntSlider(start=1, end=10, value=1, name='epochs')
+# # create a Matplotlib pane
+# plot_pane1 = pn.pane.Matplotlib(plot_accuracy(epochs, accuracy, accuracy1))
 
-# set the width of the pane
-plot_pane1.width = 800
+# # set the width of the pane
+# plot_pane1.width = 800
 
-# create a panel dashboard
-dashboard = pn.Column(
-    '# Accuracy over Epochs',
-    pn.Row(
-        pn.Column(plot_pane1, width=800),
-    ),
-)
+# # create a panel dashboard
+# dashboard = pn.Column(
+#     '# Accuracy over Epochs',
+#     pn.Row(
+#         pn.Column(plot_pane1, width=800),
+#     ),
+# )
 
-# Display the dashboard
-dashboard.servable()
+# # Display the dashboard
+# dashboard.servable()
 
 
 # In[18]:
