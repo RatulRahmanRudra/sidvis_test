@@ -337,9 +337,9 @@ template = pn.template.FastListTemplate(
 # In[20]:
 
 
-template.show()
+# template.show()
 # template.servable()
-# pn.serve(template)
+pn.serve(template, 8080)
 
 # from flask import Flask
 
