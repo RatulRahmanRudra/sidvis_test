@@ -341,11 +341,11 @@ template = pn.template.FastListTemplate(
 # template.servable()
 pn.serve(template, 8080)
 
-from flask import Flask
+# from flask import Flask
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 
-if __name__ == '__main__':
-    pn.serve(template, 8080)
+# if __name__ == '__main__':
+#     pn.serve(template, 8080)
